@@ -373,6 +373,10 @@ st.write(f"S0 : {round(intercept_x,2)} m/s")
 st.write(f"S0 : {round(intercept_x_kmh,2)} km/h")
 st.write(f"A0 : {round(intercept_y,2)} m/s²")
 
+#calcul pente 
+pente = - intercept_y / intercept_x 
+st.write(f"Pente :{round(pente,2)}")
+
 #nombre de points pour faire la regression
 nombre_points_acc = resultat_df_dans_intervalle.shape[0]
 st.write(f"Nombre de points utilisés pour tracer la regression : {round(nombre_points_acc)}")
