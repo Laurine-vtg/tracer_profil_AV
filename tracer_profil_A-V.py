@@ -383,5 +383,8 @@ st.write(f"Nombre de points utilisés pour tracer la regression : {round(nombre_
 points_bruts = consolidated_data.shape[0]
 st.write(f"Nombre de points de données brutes : {points_bruts} ")
 
+#determiner Vmax
+Vmax = consolidated_data['Velocity_filtered'].max()
+st.write(f"Vmax : {round(Vmax,2)} m/s")
 
 
