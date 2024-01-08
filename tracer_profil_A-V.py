@@ -386,12 +386,3 @@ st.write(f"Nombre de points de données brutes : {points_bruts} ")
 #determiner Vmax
 Vmax = consolidated_data['Velocity_filtered'].max()
 st.write(f"Vmax : {round(Vmax,2)} m/s")
-
-
-
-
-
-# Enregistrement du fichier CSV sur votre ordinateur
-chemin_fichier_csv = "C:\Users\lauri\OneDrive\Documents\M2\STAGE\MEMOIRE"  
-consolidated_data.to_csv(chemin_fichier_csv, index=False)
-st.success(f"Fichier CSV enregistré avec succès à l'emplacement : {chemin_fichier_csv}")
