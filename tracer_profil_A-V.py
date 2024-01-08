@@ -387,4 +387,18 @@ st.write(f"Nombre de points de données brutes : {points_bruts} ")
 Vmax = consolidated_data['Velocity_filtered'].max()
 st.write(f"Vmax : {round(Vmax,2)} m/s")
 
-consolidated_data.to_csv("data.csv",index=False)
+# Ajouter une section pour enregistrer le fichier CSV
+st.header("Enregistrer les données dans un fichier CSV")
+
+# Ajouter un sélecteur de fichier pour choisir l'emplacement de sauvegarde
+emplacement_fichier = st.file_uploader("Sélectionnez un emplacement pour enregistrer le fichier CSV", type="csv", key="emplacement_csv")
+
+# Bouton pour enregistrer le fichier CSV
+if st.button("Enregistrer le fichier CSV"):
+    if emplacement_fichier:
+        # Enregistrer le fichier CSV à l'emplacement spécifié
+        chemin_fichier_csv = emplacement_fichier.name
+        consolidated_data.to_csv(chemin_fichier_csv, index=False)
+        st.success(f"Fichier CSV enregistré avec succès à l'emplacement : {chemin_fichier_csv}")
+    else:
+        st.warning("Veuillez sélectionner un emplacement valide pour enregistrer le fichier CSV.")
