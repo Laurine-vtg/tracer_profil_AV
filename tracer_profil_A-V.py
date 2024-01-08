@@ -387,4 +387,4 @@ st.write(f"Nombre de points de données brutes : {points_bruts} ")
 Vmax = consolidated_data['Velocity_filtered'].max()
 st.write(f"Vmax : {round(Vmax,2)} m/s")
 
-
+consolidated_data.to_csv("data.csv",index=False)
