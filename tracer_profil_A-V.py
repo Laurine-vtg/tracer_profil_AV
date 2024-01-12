@@ -203,6 +203,7 @@ intercept_estimation = model.params[0]
 
 # Calculer l'intervalle de confiance pour la pente (coefficient)
 confidence_interval = model.conf_int(alpha=0.05, cols=None)
+st.write (confidence_interval)
 
 
 # Obtenir l'équation de la droite de régression
